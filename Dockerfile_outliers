@@ -4,13 +4,15 @@ RUN apk add --no-cache \
     bash \
     git
 
-RUN git clone https://github.com/andrewbrdk/Outliers
+RUN git clone https://github.com/andrewbrdk/Outliers /Outliers
 WORKDIR /Outliers
 RUN go get outliers
 RUN go build
 WORKDIR /
 RUN cp /Outliers/outliers /app/outliers
 RUN rm -r Outliers
+WORKDIR /app
+ADD outliers.toml ./
 
 EXPOSE 9090
 
