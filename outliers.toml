@@ -1,7 +1,7 @@
 [[connections]]
 title = "main_pg"
 type = "postgres"
-connection =  "$PG_CONSTR"
+connection = "$PG_CONSTR"
 max_open_conns = 10
 max_idle_conns = 2
 conn_max_lifetime = "30m"
@@ -17,7 +17,7 @@ connection = "main_pg"
 data_sql = "select dt as t, views as value from wiki_pageviews where project='en.wikipedia'"
 output = "wiki_pageviews_outliers"
 backsteps = 90
-cron_schedule = "*/5 * * * *"
+cron_schedule = "0 * * * *"
 notify_emails = [""]
 detection_method = 'dist_from_mean'
 percent = 10
