@@ -20,7 +20,7 @@ RUN rm /app/requirements.txt
 RUN mkdir -p /app/examples
 ADD wiki.job wiki_history.job wiki_pageviews.py /app/examples
 
-RUN git clone https://github.com/andrewbrdk/Repeater
+RUN git clone https://github.com/andrewbrdk/Repeater /Repeater
 WORKDIR /Repeater
 RUN go get repeater
 RUN go build
