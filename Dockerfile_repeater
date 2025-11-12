@@ -28,6 +28,8 @@ WORKDIR /
 RUN cp /Repeater/repeater /app/
 RUN rm -r /Repeater
 
+WORKDIR /app
+
 EXPOSE 8080
 
 ENTRYPOINT ["/app/repeater"]
