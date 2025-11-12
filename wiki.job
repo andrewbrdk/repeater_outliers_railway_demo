@@ -1,0 +1,6 @@
+title = "wiki"
+cron = "55 * * * *"
+
+[[tasks]]
+name = "wiki_pageviews"
+cmd = "python3 ./examples/wiki_pageviews.py --end_date={{.scheduled_dt}}"   
