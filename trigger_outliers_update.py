@@ -3,7 +3,7 @@ import sys
 import requests
 
 OUTLIERS_HOST = os.getenv("OUTLIERS_HOST") 
-API_URL = f"https://{OUTLIERS_HOST}/api/update"
+API_URL = f"http://{OUTLIERS_HOST}/api/update"
 API_KEY = os.getenv("OUTLIERS_API_KEY")
 
 payload = {
