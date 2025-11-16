@@ -2,8 +2,9 @@ import os
 import sys
 import requests
 
-OUTLIERS_HOST = os.getenv("OUTLIERS_HOST") 
-API_URL = f"http://{OUTLIERS_HOST}/api/update"
+OUTLIERS_HOST = os.getenv("OUTLIERS_HOST")
+OUTLIERS_PORT = "9090" 
+API_URL = f"http://{OUTLIERS_HOST}:{OUTLIERS_PORT}/api/update"
 API_KEY = os.getenv("OUTLIERS_API_KEY")
 
 payload = {
