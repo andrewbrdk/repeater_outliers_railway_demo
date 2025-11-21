@@ -1,5 +1,5 @@
 title = "demo oh, hi"
-listens = ["hello, world"]
+listens = ["demo hello, world"]
 
 [[tasks]]
 name = "oh"
