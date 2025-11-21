@@ -1,4 +1,4 @@
-title = "demo hello, world"
+title = "demo_hello_world"
 cron = "0 1 * * *"
 
 [[tasks]]

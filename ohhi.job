@@ -1,9 +1,9 @@
-title = "demo oh, hi"
-listens = ["demo hello, world"]
+title = "demo_oh_hi"
+listens = ["demo_hello_world"]
 
 [[tasks]]
 name = "oh"
-cmd = "echo 'oh,'"
+cmd = "echo 'oh'"
 
 [[tasks]]
 name = "hi" 
