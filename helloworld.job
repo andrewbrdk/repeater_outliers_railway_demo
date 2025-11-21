@@ -1,0 +1,10 @@
+title = "demo hello, world"
+cron = "0 1 * * *"
+
+[[tasks]]
+name = "hello"
+cmd = "echo Hello"
+
+[[tasks]]
+name = "world" 
+cmd = "echo world"

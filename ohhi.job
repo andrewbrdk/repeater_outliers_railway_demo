@@ -1,0 +1,10 @@
+title = "demo oh, hi"
+listens = ["hello, world"]
+
+[[tasks]]
+name = "oh"
+cmd = "echo 'oh,'"
+
+[[tasks]]
+name = "hi" 
+cmd = "sleep 1 && echo 'hi!'"
