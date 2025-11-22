@@ -7,4 +7,4 @@ cmd = "echo 'oh'"
 
 [[tasks]]
 name = "hi" 
-cmd = "sleep 1 && echo 'hi!'"
+cmd = "sleep 1 && if [ $((RANDOM % 2)) -eq 0 ]; then echo 'hi'; else echo 'bye'; exit 1; fi"
