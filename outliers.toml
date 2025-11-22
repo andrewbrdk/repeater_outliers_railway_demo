@@ -19,7 +19,7 @@ output = "wiki_pageviews_outliers"
 cron_schedule = "10 5 * * *"
 notify_emails = [""]
 plot_lookback = 90
-detection_method = 'dist_from_mean'
+detection_method = 'dev_from_mean'
 percent = 10
 avg_window = 30
 
@@ -30,7 +30,7 @@ data_sql = "select dt as t, views as value from wiki_pageviews where project='en
 output = "wiki_pageviews_outliers"
 notify_emails = [""]
 plot_lookback = 90
-detection_method = 'dist_from_mean'
+detection_method = 'dev_from_mean'
 avg_window = 30
 sigma = 3
 
@@ -41,7 +41,7 @@ data_sql = "select dt as t, views as value from wiki_pageviews where project='en
 output = "wiki_pageviews_outliers"
 notify_emails = [""]
 plot_lookback = 90
-detection_method = 'dist_from_mean'
+detection_method = 'dev_from_mean'
 avg_window = 60
 period = 7
 percent = 7
@@ -75,6 +75,6 @@ data_sql = "select dt::timestamp as t, project as dim, views as value from wiki_
 output = "wiki_pageviews_outliers"
 cron_schedule = "15 5 * * *"
 plot_lookback = 90
-detection_method = 'dist_from_mean'
+detection_method = 'dev_from_mean'
 avg_window = 30
 percent = 10
