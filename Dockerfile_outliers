@@ -2,17 +2,22 @@ FROM golang:1.23-alpine
 
 RUN apk add --no-cache \
     bash \
-    git
+    git \
+    wget
 
 RUN git clone https://github.com/andrewbrdk/Outliers /Outliers
 WORKDIR /Outliers
+RUN wget -P ./dist \
+    https://cdn.jsdelivr.net/npm/uplot@1.6.32/dist/uPlot.iife.min.js \
+    https://cdn.jsdelivr.net/npm/uplot@1.6.32/dist/uPlot.min.css \
+    https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js \
+    https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css
 RUN go get outliers
 RUN go build
-WORKDIR /
 RUN mkdir -p /app
 RUN cp /Outliers/outliers /app/outliers
-RUN rm -r Outliers
 WORKDIR /app
+RUN rm -r /Outliers
 ADD outliers.toml ./
 
 EXPOSE 9090
