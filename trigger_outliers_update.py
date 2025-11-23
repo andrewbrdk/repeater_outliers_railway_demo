@@ -8,7 +8,9 @@ API_URL = f"http://{OUTLIERS_HOST}:{OUTLIERS_PORT}/api/update"
 API_KEY = os.getenv("OUTLIERS_API_KEY")
 
 payload = {
-    "title": ["Wiki Pageviews", "Wiki Pageviews Projects"]
+    "title": ["En.wiki Pageviews", "En.wiki Pageviews, n*Sigma", 
+              "En.wiki Pageviews, Period", "En.wiki Pageviews, IQR",
+              "En.wiki Pageviews, Threshold", "Wiki Pageviews, Projects"]
 }
 
 headers = {
@@ -32,6 +34,9 @@ def main():
         sys.exit(response.text)
 
     print(data)
+
+    if data['status'] != 'ok' or len(payload['title']) != len(data['update_started']):
+        sys.exit(f"Failed to start updates for all detectors, {payload}")
 
 if __name__ == "__main__":
     main()
